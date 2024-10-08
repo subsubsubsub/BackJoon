@@ -21,17 +21,15 @@ public class Main {
 
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
-        int[] arr = new int[n];
-        int[] sumArr = new int[n];
+        int[] arr = new int[n+1];
+        int[] sumArr = new int[n + 1];
 
         st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i <= n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
-            if (i == 0)
-                sumArr[i] = arr[i];
-            else {
-                sumArr[i] = sumArr[i - 1] + arr[i];
-            }
+
+            sumArr[i] = sumArr[i - 1] + arr[i];
+
 //            System.out.print(sumArr[i] + " ");
         }
 
@@ -40,14 +38,7 @@ public class Main {
             int i = Integer.parseInt(st.nextToken());
             int j = Integer.parseInt(st.nextToken());
 
-
-            if (i == j) {
-                System.out.println(arr[i - 1]);
-            } else if (i - 2 >= 0) {
-                System.out.println(sumArr[j - 1] - sumArr[i - 2]);
-            } else {
-                System.out.println(sumArr[j - i]);
-            }
+            System.out.println(sumArr[j] - sumArr[i - 1]);
         }
     }
 }
