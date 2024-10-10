@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 /*  주몽 silver 4
@@ -23,14 +24,23 @@ public class Main {
         for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
+        Arrays.sort(arr);
 
-        for (int i = 0; i < n; i++) {
-            for(int j=i+1;j<n;j++){
-                if (arr[i] + arr[j] == m) {
-                    cnt++;
-                }
+        int i = 0;
+        int j = n - 1;
+        while (i < j) {
+            if (arr[i] + arr[j] == m) {
+                cnt++;
+                i++;
+                j--;
+            } else if (arr[i] + arr[j] > m) {
+                j--;
+            } else if (arr[i] + arr[j] < m) {
+                i++;
             }
+//            System.out.println(arr[i] + arr[j]);
         }
+//        System.out.println();
         System.out.println(cnt);
         br.close();
     }
