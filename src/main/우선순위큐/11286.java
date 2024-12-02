@@ -14,7 +14,7 @@ import java.util.LinkedList;
 
 우선순위 큐 사용
     - 절댓값 기준으로 정렬되도록 설정
-    - 단, 절댓값이 갑ㅌ으면 음수 우선 정렬
+    - 단, 절댓값이 같으면 음수 우선 정렬
 */
 
 public class Main {
