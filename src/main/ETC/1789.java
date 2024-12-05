@@ -22,13 +22,11 @@ public class Main {
 
         int i = 1;
         while (sum <= n) {
-            System.out.println(i);
             sum += i;
             i++;
             cnt++;
 
         }
-        System.out.println(sum);
         System.out.println(cnt - 1);
 
     }
